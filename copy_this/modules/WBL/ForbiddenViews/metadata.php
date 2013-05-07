@@ -36,7 +36,7 @@
 				'value' => array()
 			)
 		),
-		'title'     => 'WBL Modules ForbiddenViews',
+		'title'     => 'WBL ForbiddenViews',
 		'thumbnail' => 'wbl_logo.jpg',
 		'url'       => 'http://wbl-konzept.de',
 		'version'   => '1.0.0'
