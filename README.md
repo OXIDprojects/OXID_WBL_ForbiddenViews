@@ -3,6 +3,8 @@ OXID_WBL_ForbiddenViews
 
 This module allows you to filter, which views are callable in the frontend. You can edit a view whitelist through the module Backend (OXID >= 4.6) or the config value aWBLViewWhitelist. (OXID <= 4.6).
 
+You must use a PSR-0 Autoloader for this module.
+
 
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
