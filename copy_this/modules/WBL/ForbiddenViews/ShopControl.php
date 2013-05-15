@@ -1,9 +1,9 @@
 <?php
 	/**
 	 * Special shop control to forbid unwanted views.
-	 * @author blange <code@wbl-konzept.de>
+	 * @author   blange <code@wbl-konzept.de>
 	 * @category modules
-	 * @package WBL_ForbiddenViews
+	 * @package  WBL_ForbiddenViews
 	 */
 	class WBL_ForbiddenViews_ShopControl extends WBL_ForbiddenViews_ShopControl_parent {
 		/**
@@ -22,12 +22,13 @@
 		 * @return void
 		 */
 		protected function _process($sClass, $sFunction, $mParams = null, $mViewsChain = null) {
-			if ((!$this->isAdmin()) && ($aList = $this->getConfig()->getConfigParam(self::CONFIG_KEY_VIEW_WHITELIST)) &&
-				(!in_array(strtolower($sClass), array_map('strtolower', $aList))))
-			{
+			if ((!$this->isAdmin()) && (empty($mViewsChain)) &&
+				($aList = $this->getConfig()->getConfigParam(self::CONFIG_KEY_VIEW_WHITELIST)) &&
+				(!in_array(strtolower($sClass), array_map('strtolower', $aList)))
+			) {
 				error_404_handler();
 			} // if
 
-			return parent::_process($sClass,$sFunction, $mParams, $mViewsChain);
+			return parent::_process($sClass, $sFunction, $mParams, $mViewsChain);
 		} // function
 	} // class
